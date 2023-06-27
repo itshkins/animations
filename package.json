@@ -1,0 +1,26 @@
+{
+  "name": "@itshkins/animations",
+  "version": "1.0.0",
+  "description": "Frame Animation Engine with Some Predefined Easing Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itshkins/animations.git"
+  },
+  "keywords": [
+    "animation",
+    "tween",
+    "bezier",
+    "easing",
+    "scene"
+  ],
+  "author": "itshkins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itshkins/animations/issues"
+  },
+  "homepage": "https://github.com/itshkins/animations#readme"
+}
