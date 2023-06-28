@@ -22,14 +22,14 @@
     "jsx": "react",
     "experimentalDecorators": true,
     "noImplicitAny": false,
-    "baseUrl": "src",
+    "baseUrl": "scripts",
     "paths": {}
   },
   "include": [
-    "src/**/*.ts"
+    "scripts/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "src/**/*.test.ts"
+    "scripts/**/*.test.ts"
   ]
 }
