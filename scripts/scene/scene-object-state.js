@@ -1,6 +1,4 @@
-import flatten from 'lodash/flatten'
-
-import {convertDegreesToRadians, calculateTangentY1} from 'helpers/calculator'
+import {calculateTangentY1, convertDegreesToRadians} from '../calculator/calculator'
 
 export const renderPolyline = (context, points) => {
   context.beginPath()
@@ -58,7 +56,7 @@ export const renderBezier = (context, bezier, zoom = 20) => {
 export const renderNativeBezier = (context, points) => {
   context.beginPath()
   context.moveTo(...points[0])
-  context.bezierCurveTo(...flatten(points.slice(1)))
+  context.bezierCurveTo(...points.slice(1))
   context.stroke()
 }
 
