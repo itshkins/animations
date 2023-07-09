@@ -9,7 +9,7 @@ npm i @itshkins/animations@latest
 ## Usage
 
 ```js
-<script src="node_modules/@itshkins/animations/dist/animations.js"></script>
+<script src="./node_modules/@itshkins/animations/dist/animations.js"></script>
 ```
 
 ```js
