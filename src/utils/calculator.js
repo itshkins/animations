@@ -1,6 +1,5 @@
-import clamp from 'lodash/clamp';
-
 import {easeLinear} from './easings';
+import {clamp} from '../utils/number-utils.js'
 
 /**
  * @typedef {function(x: number): number} Calculator

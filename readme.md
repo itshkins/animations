@@ -1,31 +1,25 @@
-# Frame Animation Engine with Some Predefined Easing Functions
+# Frame animation engine with some predefined timing functions
 
-## Tween Animation Example
+## Installation
+
+```sh
+npm i @itshkins/animations@latest
+```
+
+## Usage
+
 ```js
-const formatNumber = (value) => String(value).padStart(2, `0`)
-const counterElement = document.querySelector(`.counter`)
-new FrameAnimation({
-  duration: 5000,
-  fps: 1,
-  onRenderFrame({frameId: elapsedSeconds, duration}) {
-    const remainingSeconds = duration - elapsedSeconds
-    const minutes = Math.floor(remainingSeconds / 1000)
-    const seconds = remainingSeconds % 1000
-    counterElement.textContent = [minutes, seconds].map(formatNumber).join(`:`)
-  },
-}).start()
+<script src="node_modules/@itshkins/animations/dist/animations.js"></script>
 ```
 
-## Accent Typography Example
 ```js
-const textElement = document.querySelector(`.text`)
-applyAccentTypography(textElement)
+import * as animation from '@itshkins/animations'
 ```
 
-```scss
-.text {
-  @include accent-animation(0.4s, 1.6s, 1, 0.033s,
-    // 01 - 31.05 / 2020
-    (4, 3, 0, 2, 0, 5, 2, 2, 3, 6, 0, 3, 0, 1, 5, 4, 2));
-}
+```js
+import { FrameAnimation, ImagesCompleteListener } from '@itshkins/animations'
 ```
+
+* [Frame animation usage - new FrameAnimation({...}).start()](src/frame-animation.md)
+* [Images complete listener usage - new ImagesCompleteListener({...}).activate()](src/images-complete-listener.md)
+* [Accent typography usage - applyAccentTypography(...)](src/accent-typography.md)

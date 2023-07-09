@@ -1,10 +1,22 @@
 {
   "name": "@itshkins/animations",
+  "type": "module",
   "version": "1.0.3",
-  "description": "Frame Animation Engine with Some Predefined Easing Functions",
-  "main": "index.js",
+  "description": "Frame animation engine with some predefined timing functions",
+  "main": "./dist/animations.cjs",
+  "browser": "./dist/animations.js",
+  "types": "./dist/animations.d.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf ./dist",
+    "start": "npm run clean && NODE_ENV=development rollup -c -w",
+    "build": "npm run clean && NODE_ENV=production rollup -c",
+    "esbuild": "npm run build:iife && npm run build:cjs && npm run build:esm && npm run build:dts",
+    "build:iife": "esbuild ./src/index.ts --outfile=./dist/js-utils.js --bundle --platform=browser --packages=external --global-name=jsUtils",
+    "build:cjs": "esbuild ./src/index.ts --outfile=./dist/js-utils.cjs --bundle --platform=node --format=cjs --packages=external",
+    "build:esm": "esbuild ./src/index.ts --outfile=./dist/js-utils.mjs --bundle --platform=node --format=esm --packages=external",
+    "build:dts": "node esbuild",
+    "test": "npm run test:unit",
+    "test:unit": "vitest src"
   },
   "repository": {
     "type": "git",
@@ -22,5 +34,11 @@
   "bugs": {
     "url": "https://github.com/itshkins/animations/issues"
   },
-  "homepage": "https://github.com/itshkins/animations#readme"
+  "homepage": "https://github.com/itshkins/animations#readme",
+  "devDependencies": {
+    "esbuild": "0.18.11",
+    "rollup": "3.26.2",
+    "rollup-plugin-dts": "5.3.0",
+    "rollup-plugin-esbuild": "5.0.0"
+  }
 }

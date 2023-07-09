@@ -1,0 +1,37 @@
+.accent-line {
+  box-sizing: content-box;
+  display: inline-block;
+  height: 0.71em;
+  padding-top: 0.16em;
+  margin-top: -0.16em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    will-change: transform;
+  }
+}
+
+@mixin accent-animation($duration, $delay, $rate, $step, $orders...) {
+  .accent-line span {
+    animation: bounce-in-up #{$rate * $duration} ease #{$delay} both;
+  }
+
+  @for $lineNumber from 1 through length($orders) {
+    $lineOrders: nth($orders, $lineNumber);
+
+    @for $letterNumber from 1 through length($lineOrders) {
+      $letterOrder: nth($lineOrders, $letterNumber);
+
+      .accent-line:nth-child(#{$lineNumber}) span:nth-child(#{$letterNumber}) {
+        animation-delay: $delay + $rate * $step * $letterOrder;
+      }
+    }
+  }
+}

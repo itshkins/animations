@@ -1,4 +1,4 @@
-import {easeLinear} from './easings'
+import {easeLinear} from './utils/easings'
 
 const SECOND = 1000
 const PLAYBACK_RATE = 1

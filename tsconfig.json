@@ -1,35 +1,39 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es6",
+    "module": "commonjs",
+    "moduleDetection": "auto",
+    "moduleResolution": "node",
+    "isolatedModules": false,
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "esnext",
+      "dom"
     ],
-    "outDir": "./dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "es2020",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "jsx": "react",
     "experimentalDecorators": true,
+    "strict": true,
     "noImplicitAny": false,
-    "baseUrl": "scripts",
-    "paths": {}
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "removeComments": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "stripInternal": true,
+    "downlevelIteration": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
-    "scripts/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules",
-    "scripts/**/*.test.ts"
+    "src/**/*.test.ts",
+    "node_modules"
   ]
 }

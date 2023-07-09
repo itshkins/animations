@@ -1,2 +1,7 @@
 /.idea
+/node_modules
 /tmp
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/coverage/
