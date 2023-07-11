@@ -6,6 +6,9 @@
   "main": "./dist/animations.cjs",
   "browser": "./dist/animations.js",
   "types": "./dist/animations.d.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "clean": "rm -rf ./dist",
     "start": "npm run clean && NODE_ENV=development rollup -c -w",
